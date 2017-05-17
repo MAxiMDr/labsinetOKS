@@ -1,0 +1,35 @@
+<html>
+<head>
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script src="http://wisdomweb.ru/editor/localization.js"></script>
+<style type="text/css">
+#pbar1 
+{
+background:#49E9FF;
+}
+</style>
+<script type="text/javascript">
+$(document).ready(function() {
+
+
+   $("#pbar1").progressbar({value:30});
+   $("#but1,#but2,#but3").button();
+   $("#but1").click(function(){ $("#pbar1").progressbar("value", $("#pbar1").progressbar("value")+10)});
+   $("#but2").click(function(){ $("#pbar1").progressbar("value", $("#pbar1").progressbar("value")-10)});
+   $("#but3").click(function(){alert($("#pbar1").progressbar("value"));});
+
+});
+</script>
+</head>
+<body>
+
+<div id="pbar1"></div>
+<br /><br />
+<button id="but1">Збільшити заповнення на 10%</button>
+<button id="but2">Зменшити заповнення на 10%</button>
+<button id="but3">Поточний процент заповнення</button>
+</div>
+</body>
+</html>

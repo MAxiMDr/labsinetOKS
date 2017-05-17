@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+
+	<title>lesson</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+
+	<style type="text/css">
+	
+	#popup{
+			display: none;
+			width: 500px;
+			height: 300px;
+	
+		background-color: #fff;
+			position: absolute;
+			z-index: 999;
+			top: 50%;
+			left: 50%;
+			margin-left: -250px;
+			margin-top: -150px;
+		}
+		#hover{
+			display: none;
+			height: 100%;
+			width: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 998;
+		}
+		form{
+			margin-left: 50px;
+			margin-top: 100px;
+		}
+		#say {
+			text-align: center;
+			margin-top: 20px;
+		}
+		#close{
+			float: right;
+		}
+		.button_open{
+			text-align: center;
+		}
+		label, input{
+			display: block;
+		}
+	</style>
+
+</head>
+<body>
+
+<div class="container">
+		<nav class="navbar navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example" aria-expanded="false">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand">Logo</a>
+				</div>
+		
+		<div class="collapse navbar-collapse" id="bs-example">
+				
+<ul class="nav navbar-nav">
+				
+<li class="active"><a href="9.html">Lab9</a></li>
+			
+	<li><a href="8.html">Lab8</a></li>
+			
+	<li><a href="3.html">Lab3</a></li>
+			
+			
+</div></div>
+		
+</nav>
+	</div>
+
+<div class="button_open">
+<button id="button">Відкрити модальне вікно</button>
+</div>
+
+<div id="popup">
+<button id="close">close</button>
+
+<form action="">
+
+	
+<label>Введіть назву команди
+		<input type="text" id="name_team" placeholder="Назва..." min="1">
+	</label>
+
+
+	<label>Введіть загальну кількість балів
+		<input type="number" id="sum_bal" placeholder="12" min="1">
+	</label>
+
+	<label>Введіть місце
+		<input type="number" id="level_team" placeholder="1" min="1">
+	</label>
+
+
+	<input type="button" id="say" value=" Вивести ">
+</form>
+</div>
+<div id="hover"></div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<p id="res1"></p>
+			<p id="res2"></p>
+			<p id="res3"></p>
+	
+			
+		</div>
+	</div>
+</div>
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+	
+	$(function(){
+	$('#button').click(function(){
+		$('#popup, #hover').show();
+	});
+	$('#close, #say').click(function(){
+		$('#popup, #hover').hide();
+	});
+});
+
+
+function calc(){
+	var name_team = document.getElementById('name_team').value,
+			sum_bal = document.getElementById('sum_bal').value,
+			level_team = document.getElementById('level_team').value;
+
+			if (level_team <= 3){
+
+	 			document.getElementById('res1').innerHTML = 'Вітаємо команду:' + name_team;
+	 			document.getElementById('res2').innerHTML = 'Загальна кількість балів:' + sum_bal;
+	 			document.getElementById('res3').innerHTML = 'Призове місце:' + level_team;
+		
+	 			 			
+			}else {
+				alert('Команда не зайняла призового місця')
+			}
+}
+document.getElementById('say').addEventListener('click', calc);
+
+
+</script>
+</html>

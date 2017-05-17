@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>lesson</title>
+</head>
+<body>
+<form>
+
+	<label>введіть d
+		<input type="number" id="dx" placeholder="123" min="1">
+	</label>
+
+	<label>введіть n
+		<input type="number" id="ny" placeholder="123" min="1">
+	</label>
+
+	<input type="button" id="say" value=" Обчислити ">
+
+</form>
+
+<p id="res1"></p>
+<p id="res2"></p>
+
+</body>
+<script>
+	function calc(){
+	var dx = document.getElementById('dx').value,
+			ny = document.getElementById('ny').value,
+	f = Math.sin(ny+8*dx)+ (5-Math.log(ny+dx)/(dx-ny) ),
+			h = Math.exp(2*ny)+Math.sqrt(16*dx*dx*(3+ny));
+
+	 document.getElementById('res1').innerHTML = 'f = ' + f;
+	 document.getElementById('res2').innerHTML = 'h = ' + h;
+}
+document.getElementById('say').addEventListener('click', calc);
+
+</script>
+</html>
